@@ -9,6 +9,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>run</module>
+        <module>common</module>
+        <module>service</module>
     </modules>
     <version>1.0</version>
 
