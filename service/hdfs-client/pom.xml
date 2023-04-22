@@ -5,16 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.john</groupId>
-        <artifactId>general</artifactId>
+        <artifactId>service</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>menu</module>
-        <module>hdfs-client</module>
-    </modules>
+    <artifactId>hdfs-client</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
