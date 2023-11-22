@@ -12,6 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "hadoop")
 public class HadoopProperties {
-    @Value("defaultFs")
-    private String defaultFs;
+//    @Value("defaultFs")
+//    private String defaultFs;
 }

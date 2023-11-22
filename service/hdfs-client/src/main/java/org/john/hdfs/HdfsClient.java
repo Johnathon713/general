@@ -1,6 +1,6 @@
 package org.john.hdfs;
 
-import org.apache.hadoop.hdfs.HdfsConfiguration;
+//import org.apache.hadoop.hdfs.HdfsConfiguration;
 import org.springframework.context.annotation.Configuration;
 
 /**
