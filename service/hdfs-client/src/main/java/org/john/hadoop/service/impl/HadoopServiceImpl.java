@@ -1,6 +1,6 @@
 package org.john.hadoop.service.impl;
 
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 //import org.apache.hadoop.fs.FileSystem;
