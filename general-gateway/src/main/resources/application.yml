@@ -1,0 +1,21 @@
+server:
+  port: 9528
+
+spring:
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: general-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.138.29.202:38848
+
+    gateway:
+      routes:
+        - id: general-user
+          uri: lb://general-user
+          predicates:
+            - Path=/user/**
+            - Path=/role/**
+            - Path=/user_roup/**

@@ -1,0 +1,62 @@
+server:
+  port: 8010
+
+spring:
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: general-user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.138.29.202:38848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      web-context-unify: false
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 43.138.29.202:38848
+            data-id: ${spring.application.name}
+            group-id: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+  datasource:
+   type: com.zaxxer.hikari.HikariDataSource
+   dynamic:
+      primary: master
+      strict: true
+      grace-destroy: false
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          type: ${spring.datasource.type}
+          url: jdbc:mysql://43.138.29.202:33306/general?characterEncoding=utf-8&useSSL=true
+          username: root
+          password: Mr8!pj_qk8rizLC
+        slave:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          type: ${spring.datasource.type}
+          url: jdbc:mysql://43.138.29.202:33306/general?characterEncoding=utf-8&useSSL=true
+          username: root
+          password: Mr8!pj_qk8rizLC
+      hikari:
+        maxPoolSize: 20
+        minIdle: 10
+        connectionTimeout: 30000
+        validationTimeout: 5000
+        idleTimeout: 600000
+        maxLifetime: 1800000
+        keepaliveTime: 30000
+  data:
+    redis:
+      host: 43.138.29.202
+      port: 36379
+      password: Mr8!pj_qk8rizLC
+      database: 7
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
