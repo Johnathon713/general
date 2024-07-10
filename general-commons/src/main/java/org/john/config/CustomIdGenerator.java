@@ -1,5 +1,6 @@
 package org.john.config;
 
+import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,6 @@ public class CustomIdGenerator implements IdentifierGenerator {
 
     @Override
     public Number nextId(Object entity) {
-        return stringRedisTemplate.opsForValue().increment(StrUtil.format("generator:id:{}", entity.getClass().getName()), 10L);
+        return stringRedisTemplate.opsForValue().increment(StrUtil.format("generator:id:{}", entity.getClass().getName()), RandomUtil.randomLong(1L, 1000L));
     }
 }

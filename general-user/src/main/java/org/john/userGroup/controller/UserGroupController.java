@@ -18,7 +18,7 @@ public class UserGroupController {
     private final UserGroupService userGroupService;
 
     @GetMapping("save")
-    public Boolean saveUserGroup(@RequestBody UserGroup userGroup) {
+    public Boolean saveUserGroup( UserGroup userGroup) {
         return userGroupService.save(userGroup);
     }
 }

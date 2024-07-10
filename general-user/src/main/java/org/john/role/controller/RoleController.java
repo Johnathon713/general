@@ -18,7 +18,7 @@ public class RoleController {
     private final RoleService roleService;
 
     @GetMapping("save")
-    public Boolean saveRole(@RequestBody Role role) {
+    public Boolean saveRole( Role role) {
         return roleService.save(role);
     }
 }

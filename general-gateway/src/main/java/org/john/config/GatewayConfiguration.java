@@ -24,6 +24,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Johnathon
+ */
 @Configuration
 public class GatewayConfiguration {
     private final List<ViewResolver> viewResolvers;
@@ -53,20 +56,14 @@ public class GatewayConfiguration {
 
     private void initBlockHandler() {
         Set<GatewayFlowRule> rules = new HashSet<>();
-        rules.add(
-                new GatewayFlowRule("pay_routh1")
-                        .setCount(2)
-                        .setIntervalSec(1)
-        );
+        rules.add(new GatewayFlowRule("pay_routh1").setCount(2).setIntervalSec(1));
         GatewayRuleManager.loadRules(rules);
 
         BlockRequestHandler handler = (serverWebExchange, throwable) -> {
             HashMap<String, String> map = new HashMap<>();
             map.put("ErrorCode", HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase());
             map.put("ErrorMessage", "请求过于频繁, 触发了sentinel限流 ... ");
-            return ServerResponse.status(HttpStatus.TOO_MANY_REQUESTS)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .body(BodyInserters.fromValue(map));
+            return ServerResponse.status(HttpStatus.TOO_MANY_REQUESTS).contentType(MediaType.APPLICATION_JSON).body(BodyInserters.fromValue(map));
         };
 
         GatewayCallbackManager.setBlockHandler(handler);

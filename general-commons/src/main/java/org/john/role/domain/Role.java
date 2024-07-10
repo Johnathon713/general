@@ -13,4 +13,5 @@ import lombok.Data;
 public class Role {
     @TableId(type = IdType.ASSIGN_ID)
     private Long roleId;
+    private String roleName;
 }
