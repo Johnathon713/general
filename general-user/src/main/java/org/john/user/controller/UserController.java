@@ -1,5 +1,6 @@
 package org.john.user.controller;
 
+import cn.hutool.core.util.StrUtil;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -16,7 +17,7 @@ import java.util.Collection;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("user")
+@RequestMapping("api/user")
 public class UserController {
     private final UserService userService;
 
@@ -26,8 +27,15 @@ public class UserController {
     }
 
     @GetMapping("page")
-    public Result<Page<User>> page(Page<User> page) {
+    public Result<Page<User>> page(String name, Page<User> page) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
+        if (StrUtil.isNotBlank(name)) {
+            wrapper.likeRight("user_id", name)
+                    .or().likeRight("user_name", name)
+                    .or().likeRight("nick_name", name)
+                    .or().likeRight("email", name).or()
+                    .likeRight("phone", name);
+        }
         return Result.success(userService.page(page, wrapper));
     }
 

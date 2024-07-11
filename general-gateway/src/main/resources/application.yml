@@ -16,4 +16,5 @@ spring:
         - id: general-user
           uri: lb://general-user-service
           predicates:
-            - Path=/user/**, /role/**, /user_group/**
+            - Path=/api/user/**, /role/**, /user_group/**
+            -
