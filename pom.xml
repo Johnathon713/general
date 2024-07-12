@@ -31,6 +31,7 @@
         <hutool.version>5.8.29</hutool.version>
         <lombok.version>1.18.34</lombok.version>
         <spring.boot.test.version>3.2.7</spring.boot.test.version>
+        <p6spy.version>1.9.1</p6spy.version>
 
         <mapper.version>4.2.3</mapper.version>
         <persistence-api.version>1.0.2</persistence-api.version>
@@ -104,6 +105,11 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring.boot.test.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.gavlyukovskiy</groupId>
+                <artifactId>p6spy-spring-boot-starter</artifactId>
+                <version>${p6spy.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

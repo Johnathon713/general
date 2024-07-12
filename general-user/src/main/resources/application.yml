@@ -24,8 +24,8 @@ spring:
             data-type: json
             rule-type: flow
   datasource:
-   type: com.zaxxer.hikari.HikariDataSource
-   dynamic:
+    type: com.zaxxer.hikari.HikariDataSource
+    dynamic:
       primary: master
       strict: true
       grace-destroy: false
@@ -50,6 +50,7 @@ spring:
         idleTimeout: 600000
         maxLifetime: 1800000
         keepaliveTime: 30000
+      p6spy: true
   data:
     redis:
       host: 43.138.29.202

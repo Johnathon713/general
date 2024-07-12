@@ -5,23 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.john</groupId>
-        <artifactId>general</artifactId>
+        <artifactId>general-commons</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>general-commons</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>general-common-base</module>
-        <module>general-common-mybatis-plus</module>
-        <module>general-common-redis</module>
-        <module>general-common-web</module>
-    </modules>
+    <artifactId>general-common-base</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
