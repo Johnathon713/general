@@ -17,3 +17,6 @@ spring:
           uri: lb://general-user-service
           predicates:
             - Path=/api/user_service/user/**, /api/user_service/role/**, /api/user_service/organization/**
+            - Method=GET, POST
+            - Header=Accept
+            - Weight=group1, 100

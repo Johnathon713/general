@@ -1,4 +1,4 @@
-package org.john.config;
+package org.john.general.config;
 
 import com.alibaba.csp.sentinel.adapter.gateway.common.rule.GatewayFlowRule;
 import com.alibaba.csp.sentinel.adapter.gateway.common.rule.GatewayRuleManager;
