@@ -30,13 +30,13 @@ spring:
       strict: true
       grace-destroy: false
       datasource:
-        master:
+        master_1:
           driver-class-name: com.mysql.cj.jdbc.Driver
           type: ${spring.datasource.type}
           url: jdbc:mysql://43.138.29.202:33306/general?characterEncoding=utf-8&useSSL=true
           username: root
           password: Mr8!pj_qk8rizLC
-        slave:
+        slave_1:
           driver-class-name: com.mysql.cj.jdbc.Driver
           type: ${spring.datasource.type}
           url: jdbc:mysql://43.138.29.202:33306/general?characterEncoding=utf-8&useSSL=true
