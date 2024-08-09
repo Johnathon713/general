@@ -14,6 +14,7 @@
         <module>general-gateway</module>
         <module>general-user</module>
         <module>general-commons</module>
+        <module>general-auth</module>
     </modules>
 
     <properties>
@@ -39,6 +40,7 @@
         <micrometer-observation.version>1.12.0</micrometer-observation.version>
         <feign-micrometer.version>12.5</feign-micrometer.version>
         <zipkin-reporter-brave.version>2.17.0</zipkin-reporter-brave.version>
+        <satoken.version>1.38.0</satoken.version>
     </properties>
 
     <dependencyManagement>
@@ -110,6 +112,21 @@
                 <groupId>com.github.gavlyukovskiy</groupId>
                 <artifactId>p6spy-spring-boot-starter</artifactId>
                 <version>${p6spy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-spring-boot3-starter</artifactId>
+                <version>${satoken.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
+                <version>${satoken.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis-jackson</artifactId>
+                <version>${satoken.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

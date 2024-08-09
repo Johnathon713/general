@@ -29,6 +29,7 @@ public class UserController {
     @GetMapping("page")
     public Result<Page<User>> page(String name, Page<User> page) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.select("user_id, user_name, nick_name, gender, email, phone, reg_channel, avatar, create_time");
         if (StrUtil.isNotBlank(name)) {
             wrapper.likeRight("user_id", name).or().likeRight("user_name", name).or().likeRight("nick_name", name).or().likeRight("email", name).or().likeRight("phone", name);
         }

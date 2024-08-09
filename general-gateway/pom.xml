@@ -52,5 +52,14 @@
             <version>1.3.2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>general-common-redis</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 </project>
