@@ -17,12 +17,7 @@ public class CustomIdGenerator implements IdentifierGenerator {
 
     @Override
     public Number nextId(Object entity) {
-        Random random = new Random(10L);
-        return stringRedisTemplate.opsForValue().increment("generator:id:" + entity.getClass().getName(), random.nextLong());
-    }
-
-    public static void main(String[] args) {
-        Random random = new Random(10L);
-        System.out.println(random.nextLong());
+        Random random = new Random();
+        return stringRedisTemplate.opsForValue().increment("generator:id:" + entity.getClass().getName(), random.nextLong(1000));
     }
 }

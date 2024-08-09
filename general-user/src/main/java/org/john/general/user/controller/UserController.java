@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.john.general.user.domain.User;
+import org.john.general.user.domain.bo.UserBo;
 import org.john.general.user.service.UserService;
 import org.john.general.web.domain.Result;
 import org.springframework.web.bind.annotation.*;
@@ -38,8 +39,8 @@ public class UserController {
 
     @PostMapping("save")
     @SentinelResource(value = "saveUser")
-    public Result<Boolean> save(@RequestBody User user) {
-        return Result.success(userService.save(user));
+    public Result<Integer> save(@RequestBody UserBo userBo) {
+        return Result.success(userService.save(userBo));
     }
 
     @PutMapping("update")

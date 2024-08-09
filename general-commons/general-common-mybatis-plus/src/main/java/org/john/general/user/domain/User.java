@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.john.general.base.BaseEntity;
 
 import java.io.Serializable;
@@ -13,10 +14,11 @@ import java.io.Serializable;
  * @author Johnathon
  */
 @Data
+@NoArgsConstructor
 @TableName("general_user")
 @EqualsAndHashCode(callSuper = true)
 public class User extends BaseEntity implements Serializable {
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId
     private Long userId;
     private String userName;
     private String nickName;
@@ -27,4 +29,8 @@ public class User extends BaseEntity implements Serializable {
     private String phone;
     private String regChannel;
     private String avatar;
+
+    public User(User user) {
+        super(user);
+    }
 }
