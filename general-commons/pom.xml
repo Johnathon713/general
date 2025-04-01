@@ -16,6 +16,7 @@
         <module>general-common-mybatis-plus</module>
         <module>general-common-redis</module>
         <module>general-common-web</module>
+        <module>general-common-log</module>
     </modules>
 
     <properties>

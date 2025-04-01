@@ -21,12 +21,14 @@
         <dependency>
             <groupId>org.john</groupId>
             <artifactId>general-common-mybatis-plus</artifactId>
-            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.john</groupId>
             <artifactId>general-common-web</artifactId>
-            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>general-common-log</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.csp</groupId>

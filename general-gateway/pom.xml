@@ -26,6 +26,17 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>general-common-log</artifactId>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.csp</groupId>
