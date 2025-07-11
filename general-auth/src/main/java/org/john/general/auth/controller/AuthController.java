@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Johnathon
  */
 @RestController
-@RequestMapping("/api/auth/")
+@RequestMapping("/api/auth_service/auth")
 public class AuthController {
 
     // 测试登录，浏览器访问： http://localhost:8081/user/doLogin?username=zhang&password=123456

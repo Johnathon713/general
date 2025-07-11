@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 @Data
 @NoArgsConstructor
-@TableName("general_user")
+@TableName("sys_user")
 @EqualsAndHashCode(callSuper = true)
 public class User extends BaseEntity implements Serializable {
     @TableId

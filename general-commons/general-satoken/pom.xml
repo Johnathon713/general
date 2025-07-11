@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.john</groupId>
-        <artifactId>general</artifactId>
+        <artifactId>general-commons</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>general-gateway</artifactId>
+    <artifactId>general-satoken</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -19,34 +19,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.john</groupId>
-            <artifactId>general-spring-cloud</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.john</groupId>
-            <artifactId>general-common-base</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.john</groupId>
-            <artifactId>general-common-log</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-spring-boot3-starter</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.john</groupId>
-            <artifactId>general-common-redis</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.dev33</groupId>

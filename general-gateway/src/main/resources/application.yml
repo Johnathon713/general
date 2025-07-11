@@ -1,5 +1,5 @@
 server:
-  port: 9528
+  port: 9527
 
 spring:
   banner:
@@ -10,25 +10,21 @@ spring:
     nacos:
       discovery:
         server-addr: 43.138.29.202:38848
+      config:
+        import-check:
+          enabled: false
     gateway:
       routes:
-        - id: general-user
-          uri: lb://general-user-service
-          predicates:
-            - Path=/api/user_service/user/**, /api/user_service/role/**, /api/user_service/organization/**
-            - Method=GET, POST
-            - Header=Accept
-            - Weight=group1, 100
         - id: general-auth
           uri: lb://general-auth
           predicates:
-            - Path=/api/auth/**
-            - Method=GET, POST
+            - Path=/api/auth_service/**
+            - Method=GET, POST, PUT, DELETE
   data:
     redis:
-      host: 43.138.29.202
+      host: 2408:400a:738:5300:e6c1:1542:b082:d743
       port: 36379
-      password: Mr8!pj_qk8rizLC
+      password: Password@13
       database: 7
 sa-token:
   # token 名称（同时也是 cookie 名称）
@@ -39,3 +35,5 @@ sa-token:
   token-style: simple-uuid
   # 是否输出操作日志
   is-log: true
+seata:
+  enabled: false

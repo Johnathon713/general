@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/user_service/role")
+@RequestMapping("api/auth_service/role")
 public class RoleController {
     private final RoleService roleService;
 

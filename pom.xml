@@ -12,9 +12,9 @@
 
     <modules>
         <module>general-gateway</module>
-        <module>general-user</module>
         <module>general-commons</module>
         <module>general-auth</module>
+        <module>general-base</module>
     </modules>
 
     <properties>
@@ -22,29 +22,79 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.cloud.alibaba.version>2023.0.3.2</spring.cloud.alibaba.version>
-        <spring.cloud.version>2023.0.5</spring.cloud.version>
+        <spring.cloud.alibaba.version>2023.0.3.3</spring.cloud.alibaba.version>
+        <spring.cloud.version>2023.0.6</spring.cloud.version>
         <spring.boot.version>3.2.12</spring.boot.version>
-        <mybatisplus.version>3.5.11</mybatisplus.version>
-        <mysql.version>8.4.0</mysql.version>
+        <mybatisplus.version>3.5.12</mybatisplus.version>
+        <mysql.version>9.3.0</mysql.version>
         <dynamic-ds.version>4.3.1</dynamic-ds.version>
-        <fastjson2.version>2.0.56</fastjson2.version>
+        <fastjson2.version>2.0.57</fastjson2.version>
         <swagger3.version>2.8.6</swagger3.version>
-        <hutool.version>5.8.36</hutool.version>
-        <lombok.version>1.18.36</lombok.version>
-        <satoken.version>1.41.0</satoken.version>
+        <hutool.version>5.8.39</hutool.version>
+        <lombok.version>1.18.38</lombok.version>
+        <satoken.version>1.44.0</satoken.version>
         <commons.pool2.version>2.12.1</commons.pool2.version>
-
-        <mapper.version>4.2.3</mapper.version>
-        <persistence-api.version>1.0.2</persistence-api.version>
-        <micrometer-tracing.version>1.2.0</micrometer-tracing.version>
-        <micrometer-observation.version>1.12.0</micrometer-observation.version>
-        <feign-micrometer.version>12.5</feign-micrometer.version>
-        <zipkin-reporter-brave.version>2.17.0</zipkin-reporter-brave.version>
+        <p6spy.version>1.11.0</p6spy.version>
+        <openfeign.version>4.3.0</openfeign.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-commons</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-base</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-log</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-mybatis-plus</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-redis</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-web</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-satoken</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-spring-cloud</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-auth</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-base</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-gateway</artifactId>
+                <version>${general.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
@@ -135,9 +185,55 @@
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
+                <artifactId>hutool-core</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-cache</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-crypto</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-dfa</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-http</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-extra</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bloomFilter</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-poi</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-system</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-captcha</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -162,9 +258,20 @@
             </dependency>
             <dependency>
                 <groupId>cn.dev33</groupId>
-                <artifactId>sa-token-redis-jackson</artifactId>
+                <artifactId>sa-token-fastjson2</artifactId>
                 <version>${satoken.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.gavlyukovskiy</groupId>
+                <artifactId>p6spy-spring-boot-starter</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${openfeign.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

@@ -1,0 +1,4 @@
+[submodule "snail-job"]
+    path = snail-job
+    url = https://gitee.com/aizuda/snail-job.git
+    branch = master

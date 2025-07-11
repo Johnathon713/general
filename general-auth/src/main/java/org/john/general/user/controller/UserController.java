@@ -21,7 +21,7 @@ import java.util.Collection;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/user_service/user")
+@RequestMapping("api/auth_service/user")
 @XSlf4j
 public class UserController {
     private final UserService userService;
