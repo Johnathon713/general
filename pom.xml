@@ -15,7 +15,7 @@
         <module>general-commons</module>
         <module>general-auth</module>
         <module>general-base</module>
-        <module>snail-job</module>
+        <module>snail-job-server</module>
     </modules>
 
     <properties>
@@ -37,7 +37,7 @@
         <commons.pool2.version>2.12.1</commons.pool2.version>
         <p6spy.version>1.11.0</p6spy.version>
         <openfeign.version>4.3.0</openfeign.version>
-        <snailjob.version>1.6.0</snailjob.version>
+        <snail-job.version>1.6.0</snail-job.version>
     </properties>
 
     <dependencyManagement>
@@ -273,10 +273,29 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openfeign.version}</version>
             </dependency>
+            <!-- snail-job服务端 -->
             <dependency>
                 <groupId>com.aizuda</groupId>
                 <artifactId>snail-job-server-starter</artifactId>
-                <version>${snailjob.version}</version>
+                <version>${snail-job.version}</version>
+            </dependency>
+            <!-- snail-job客户端 -->
+            <dependency>
+                <groupId>com.aizuda</groupId>
+                <artifactId>snail-job-client-starter</artifactId>
+                <version>${snail-job.version}</version>
+            </dependency>
+            <!-- snail-job 重试相关依赖 -->
+            <dependency>
+                <groupId>com.aizuda</groupId>
+                <artifactId>snail-job-client-retry-core</artifactId>
+                <version>${snail-job.version}</version>
+            </dependency>
+            <!-- snail-job 客户端核心依赖 -->
+            <dependency>
+                <groupId>com.aizuda</groupId>
+                <artifactId>snail-job-client-job-core</artifactId>
+                <version>${snail-job.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

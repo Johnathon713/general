@@ -1,9 +1,40 @@
 spring:
+  application:
+    name: snail-job-server
   datasource:
     url: jdbc:mysql://2408:400a:738:5300:e6c1:1542:b082:d743:33306/snail_job?useUnicode=true&characterEncoding=utf8
     username: root
     password: Password@13
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        namespace: general
+        group: GENERAL_GROUP
+      config:
+        namespace: general
+        group: GENERAL_GROUP
+        import-check:
+          enabled: false
+      server-addr: "[2408:400a:738:5300:e6c1:1542:b082:d743]:38848"
+      username: nacos
+      password: Password@13
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      web-context-unify: false
+      datasource:
+        ds1:
+          nacos:
+            server-addr: "[2408:400a:738:5300:e6c1:1542:b082:d743]:38848"
+            username: nacos
+            password: Password@13
+            data-id: ${spring.application.name}
+            group-id: GENERAL_GROUP
+            namespace: general
+            data-type: json
+            rule-type: flow
 
 server:
   port: 8010
@@ -37,17 +68,17 @@ snail-job:
     # 开关
     enabled: true
     # SMTP服务器域名
-    host: xxx
+    host: smtp.163.com
     # SMTP服务端口
     port: 465
     # 是否需要用户名密码验证
     auth: true
     # 用户名
-    user: demo
+    user: Johnathon713@163.com
     # 密码
-    pass: xxxx
+    pass: MHaZiK4dLu5emS9V
     # 发送方，遵循RFC-822标准
-    from: xxx.qq.com
+    from: Johnathon713@163.com
     # 使用 STARTTLS安全连接，STARTTLS是对纯文本通信协议的扩展。它将纯文本连接升级为加密连接（TLS或SSL）， 而不是使用一个单独的加密通信端口。
     starttlsEnable: false
     # 使用 SSL安全连接
@@ -56,3 +87,5 @@ snail-job:
     timeout: 0
     # Socket连接超时值，单位毫秒，缺省值不超时
     connectionTimeout: 0
+seata:
+  enabled: false

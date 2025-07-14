@@ -9,7 +9,7 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>snail-job</artifactId>
+    <artifactId>snail-job-server</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -18,6 +18,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>general-spring-cloud</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.aizuda</groupId>
             <artifactId>snail-job-server-starter</artifactId>

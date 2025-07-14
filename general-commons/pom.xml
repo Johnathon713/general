@@ -19,6 +19,7 @@
         <module>general-common-log</module>
         <module>general-spring-cloud</module>
         <module>general-satoken</module>
+        <module>general-snail-job-client</module>
     </modules>
 
     <properties>
