@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.john.general.role.domain.Role;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Mapper
 public interface RoleMapper extends BaseMapper<Role> {

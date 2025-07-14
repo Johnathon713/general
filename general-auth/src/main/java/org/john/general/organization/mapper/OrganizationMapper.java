@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.john.general.organization.domain.Organization;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Mapper
 public interface OrganizationMapper extends BaseMapper<Organization> {

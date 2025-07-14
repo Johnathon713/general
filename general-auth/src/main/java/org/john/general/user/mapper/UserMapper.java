@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.john.general.user.domain.User;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {

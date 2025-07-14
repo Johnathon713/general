@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @RestController
 @RequestMapping("/api/auth_service/auth")

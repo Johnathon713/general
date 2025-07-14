@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @SpringBootApplication
-public class AuthRun {
+public class BaseApp {
     public static void main(String[] args) {
-        SpringApplication.run(AuthRun.class, args);
+        SpringApplication.run(BaseApp.class, args);
     }
 }

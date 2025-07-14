@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Data
 public class Result<T> implements Serializable {

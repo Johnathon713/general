@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Configuration
 public class MybatisPlusConfig {

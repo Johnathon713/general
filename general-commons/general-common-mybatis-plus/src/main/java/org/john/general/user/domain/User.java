@@ -11,7 +11,7 @@ import org.john.general.base.BaseEntity;
 import java.io.Serializable;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Data
 @NoArgsConstructor

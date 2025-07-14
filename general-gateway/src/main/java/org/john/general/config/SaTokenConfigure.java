@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * [Sa-Token 权限认证] 配置类
  *
- * @author click33
+ * @author llxx
  */
 @Configuration
 public class SaTokenConfigure {

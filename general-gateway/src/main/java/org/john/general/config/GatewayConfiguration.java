@@ -7,7 +7,7 @@ import org.springframework.web.reactive.result.view.ViewResolver;
 import java.util.List;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Configuration
 public class GatewayConfiguration {

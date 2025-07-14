@@ -15,6 +15,7 @@
         <module>general-commons</module>
         <module>general-auth</module>
         <module>general-base</module>
+        <module>snail-job</module>
     </modules>
 
     <properties>
@@ -36,6 +37,7 @@
         <commons.pool2.version>2.12.1</commons.pool2.version>
         <p6spy.version>1.11.0</p6spy.version>
         <openfeign.version>4.3.0</openfeign.version>
+        <snailjob.version>1.6.0</snailjob.version>
     </properties>
 
     <dependencyManagement>
@@ -271,7 +273,11 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openfeign.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.aizuda</groupId>
+                <artifactId>snail-job-server-starter</artifactId>
+                <version>${snailjob.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

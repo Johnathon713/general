@@ -8,7 +8,7 @@ import org.john.general.organization.service.OrganizationService;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Service
 @RequiredArgsConstructor

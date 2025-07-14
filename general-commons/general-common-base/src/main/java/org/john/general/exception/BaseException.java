@@ -3,7 +3,7 @@ package org.john.general.exception;
 import lombok.Getter;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 @Getter
 public class BaseException extends RuntimeException {

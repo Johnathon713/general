@@ -5,7 +5,7 @@ import org.john.general.user.domain.User;
 import org.john.general.user.domain.bo.UserBo;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 public interface UserService extends IService<User> {
     Integer save(UserBo userBo);

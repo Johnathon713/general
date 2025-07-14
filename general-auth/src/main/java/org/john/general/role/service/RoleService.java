@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import org.john.general.role.domain.Role;
 
 /**
- * @author Johnathon
+ * @author llxx
  */
 public interface RoleService extends IService<Role> {
 }
