@@ -1,0 +1,58 @@
+spring:
+  datasource:
+    url: jdbc:mysql://2408:400a:738:5300:e6c1:1542:b082:d743:33306/snail_job?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: Password@13
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 8010
+  servlet:
+    context-path: /snail-job
+
+snail-job:
+  # 服务端netty的端口号
+  server-port: 17888
+  # 合并日志默认保存天数
+  merge-log-days: 1
+  # 合并日志默认的条数
+  merge-Log-num: 500
+  # 配置每批次拉取重试数据的大小
+  retry-pull-page-size: 100
+  # 配置日志保存时间（单位：天）
+  log-storage: 7
+  # bucket的总数量
+  bucket-total: 128
+  # Dashboard 任务容错天数
+  summary-day: 7
+  # 配置负载均衡周期时间
+  load-balance-cycle-time: 10
+  # 通知类型默认使用grpc(since:1.6.0-beat1 netty 已经下线)
+  rpc-type: grpc
+  # 重试任务拉取的并行度(since:1.4.0)
+  retry-max-pull-parallel: 2
+  # 服务端节点IP(默认按照`NetUtil.getLocalIpStr()`)(since:1.6.0-beat1)
+  server-host: 127.0.0.1
+  mail:
+    # 开关
+    enabled: true
+    # SMTP服务器域名
+    host: xxx
+    # SMTP服务端口
+    port: 465
+    # 是否需要用户名密码验证
+    auth: true
+    # 用户名
+    user: demo
+    # 密码
+    pass: xxxx
+    # 发送方，遵循RFC-822标准
+    from: xxx.qq.com
+    # 使用 STARTTLS安全连接，STARTTLS是对纯文本通信协议的扩展。它将纯文本连接升级为加密连接（TLS或SSL）， 而不是使用一个单独的加密通信端口。
+    starttlsEnable: false
+    # 使用 SSL安全连接
+    sslEnable: false
+    # SMTP超时时长，单位毫秒，缺省值不超时
+    timeout: 0
+    # Socket连接超时值，单位毫秒，缺省值不超时
+    connectionTimeout: 0
