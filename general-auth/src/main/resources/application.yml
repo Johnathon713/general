@@ -89,3 +89,13 @@ logging:
     com.zaxxer.hikari: TRACE
 seata:
   enabled: false
+
+snail-job:
+  group: general
+  token: SJ_X2Ziw8PNc9Yjtwh2AaQ4uVSQamaC9Syw
+  server:
+    host: 127.0.0.1
+    port: 17888
+  namespace: 074a1e3f65c8452b806685651a36eccd
+  host: 127.0.0.1
+  port: 17890

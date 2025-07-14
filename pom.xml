@@ -44,6 +44,26 @@
         <dependencies>
             <dependency>
                 <groupId>org.john</groupId>
+                <artifactId>general-auth</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-base</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-gateway</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>snail-job-server</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
                 <artifactId>general-commons</artifactId>
                 <version>${general.version}</version>
             </dependency>
@@ -69,63 +89,29 @@
             </dependency>
             <dependency>
                 <groupId>org.john</groupId>
+                <artifactId>general-common-satoken</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-snail-job-client</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-spring-cloud</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
                 <artifactId>general-common-web</artifactId>
                 <version>${general.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-satoken</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-spring-cloud</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-auth</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-base</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-gateway</artifactId>
-                <version>${general.version}</version>
-            </dependency>
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>${commons.pool2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-common-base</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-common-log</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-common-mybatis-plus</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-common-redis</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-common-web</artifactId>
-                <version>${general.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>

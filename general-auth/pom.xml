@@ -20,7 +20,11 @@
     <dependencies>
         <dependency>
             <groupId>org.john</groupId>
-            <artifactId>general-spring-cloud</artifactId>
+            <artifactId>general-common-snail-job-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>general-common-spring-cloud</artifactId>
         </dependency>
         <dependency>
             <groupId>org.john</groupId>
@@ -32,7 +36,7 @@
         </dependency>
         <dependency>
             <groupId>org.john</groupId>
-            <artifactId>general-satoken</artifactId>
+            <artifactId>general-common-satoken</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>

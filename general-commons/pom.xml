@@ -17,9 +17,9 @@
         <module>general-common-redis</module>
         <module>general-common-web</module>
         <module>general-common-log</module>
-        <module>general-spring-cloud</module>
-        <module>general-satoken</module>
-        <module>general-snail-job-client</module>
+        <module>general-common-spring-cloud</module>
+        <module>general-common-satoken</module>
+        <module>general-common-snail-job-client</module>
     </modules>
 
     <properties>

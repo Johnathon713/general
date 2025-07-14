@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>org.john</groupId>
-            <artifactId>general-spring-cloud</artifactId>
+            <artifactId>general-common-spring-cloud</artifactId>
         </dependency>
         <dependency>
             <groupId>com.aizuda</groupId>

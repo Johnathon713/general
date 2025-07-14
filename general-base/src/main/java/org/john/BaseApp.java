@@ -1,5 +1,6 @@
 package org.john;
 
+import com.aizuda.snailjob.client.starter.EnableSnailJob;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -7,6 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * @author llxx
  */
+@EnableSnailJob
 @SpringBootApplication
 @EnableDiscoveryClient
 public class BaseApp {
