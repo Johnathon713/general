@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="GatewayRun" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-    <module name="general-gateway" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="org.john.general.GatewayRun" />
+  <configuration default="false" name="AuthApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="general-auth" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="org.john.AuthApp" />
     <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="org.john.general.*" />
+        <option name="PATTERN" value="org.john.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
