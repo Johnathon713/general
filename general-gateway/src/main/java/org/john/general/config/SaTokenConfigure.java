@@ -19,7 +19,7 @@ public class SaTokenConfigure {
     public SaReactorFilter getSaReactorFilter() {
         return new SaReactorFilter()
                 // 拦截地址
-                .addInclude("/**")    /* 拦截全部path */
+                .addInclude("/**")
                 // 开放地址
                 .addExclude("/favicon.ico").addExclude("/api/auth_service/**")
                 // 鉴权方法：每次访问进入

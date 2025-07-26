@@ -20,6 +20,18 @@
     <dependencies>
         <dependency>
             <groupId>org.john</groupId>
+            <artifactId>general-common-entity</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>general-common-mybatis-plus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.john</groupId>
+            <artifactId>general-common-satoken</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.john</groupId>
             <artifactId>general-common-snail-job-client</artifactId>
         </dependency>
         <dependency>
@@ -28,15 +40,7 @@
         </dependency>
         <dependency>
             <groupId>org.john</groupId>
-            <artifactId>general-common-mybatis-plus</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.john</groupId>
             <artifactId>general-common-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.john</groupId>
-            <artifactId>general-common-satoken</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>

@@ -1,0 +1,90 @@
+server:
+  port: 8027
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+
+  datasource:
+    dynamic:
+      grace-destroy: true
+      primary: master
+      strict: true
+      p6spy: false
+      hikari:
+        connection-test-query: SELECT 1
+        is-auto-commit: false
+      strategy: com.baomidou.dynamic.datasource.strategy.LoadBalanceDynamicDataSourceStrategy
+      datasource:
+        master_1:
+          type: ${spring.datasource.type}
+          driver-class-name: ${spring.datasource.driver-class-name}
+          username: ${spring.datasource.username}
+          password: ${spring.datasource.password}
+          url: jdbc:mysql://2408:400a:738:5300:e6c1:1542:b082:d743:33306/general_log?characterEncoding=utf-8&useSSL=true
+          hikari:
+            maximum-pool-size: 10
+            minimum-idle: 2
+        slave_1:
+          type: ${spring.datasource.type}
+          driver-class-name: ${spring.datasource.driver-class-name}
+          username: ${spring.datasource.username}
+          password: ${spring.datasource.password}
+          url: jdbc:mysql://2408:400a:738:5300:e6c1:1542:b082:d743:33306/general_log?characterEncoding=utf-8&useSSL=true
+          hikari:
+            maximum-pool-size: 20
+            minimum-idle: 2
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Password@13
+  banner:
+    location: classpath:banner.txt
+  application:
+    name: general-log
+  cloud:
+    nacos:
+      discovery:
+        group: GENERAL_GROUP
+        namespace: general
+      config:
+        group: GENERAL_GROUP
+        namespace: general
+        import-check:
+          enabled: false
+      server-addr: "[2408:400a:738:5300:e6c1:1542:b082:d743]:38848"
+      username: nacos
+      password: Password@13
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      web-context-unify: false
+      datasource:
+        ds1:
+          nacos:
+            server-addr: "[2408:400a:738:5300:e6c1:1542:b082:d743]:38848"
+            username: nacos
+            password: Password@13
+            data-id: ${spring.application.name}
+            group-id: GENERAL_GROUP
+            namespace: general
+            data-type: json
+            rule-type: flow
+  data:
+    redis:
+      host: 2408:400a:738:5300:e6c1:1542:b082:d743
+      port: 36379
+      password: Mr8!pj_qk8rizLC
+      database: 7
+logging:
+  level:
+    com.zaxxer.hikari.HikariConfig: DEBUG
+    com.zaxxer.hikari: TRACE
+seata:
+  enabled: false
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted

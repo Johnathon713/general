@@ -16,6 +16,7 @@
         <module>general-auth</module>
         <module>general-base</module>
         <module>snail-job-server</module>
+        <module>general-log</module>
     </modules>
 
     <properties>
@@ -38,6 +39,8 @@
         <p6spy.version>1.11.0</p6spy.version>
         <openfeign.version>4.3.0</openfeign.version>
         <snail-job.version>1.6.0</snail-job.version>
+        <micrometer-tracing.version>1.5.2</micrometer-tracing.version>
+        <mapstruct-plus.version>1.4.8</mapstruct-plus.version>
     </properties>
 
     <dependencyManagement>
@@ -59,6 +62,11 @@
             </dependency>
             <dependency>
                 <groupId>org.john</groupId>
+                <artifactId>general-log</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
                 <artifactId>snail-job-server</artifactId>
                 <version>${general.version}</version>
             </dependency>
@@ -70,6 +78,11 @@
             <dependency>
                 <groupId>org.john</groupId>
                 <artifactId>general-common-base</artifactId>
+                <version>${general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.john</groupId>
+                <artifactId>general-common-entity</artifactId>
                 <version>${general.version}</version>
             </dependency>
             <dependency>
@@ -140,6 +153,11 @@
                 <version>${mybatisplus.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.gavlyukovskiy</groupId>
+                <artifactId>p6spy-spring-boot-starter</artifactId>
+                <version>${p6spy.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mysql</groupId>
@@ -221,6 +239,16 @@
                 <artifactId>hutool-captcha</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-jwt</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-json</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -250,9 +278,14 @@
                 <version>${satoken.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.gavlyukovskiy</groupId>
-                <artifactId>p6spy-spring-boot-starter</artifactId>
-                <version>${p6spy.version}</version>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-jwt</artifactId>
+                <version>${satoken.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-alone-redis</artifactId>
+                <version>${satoken.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -282,6 +315,27 @@
                 <groupId>com.aizuda</groupId>
                 <artifactId>snail-job-client-job-core</artifactId>
                 <version>${snail-job.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing-bom</artifactId>
+                <version>${micrometer-tracing.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing</artifactId>
+                <version>${micrometer-tracing.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing-bridge-brave</artifactId>
+                <version>${micrometer-tracing.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.linpeilie</groupId>
+                <artifactId>mapstruct-plus-spring-boot-starter</artifactId>
+                <version>${mapstruct-plus.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

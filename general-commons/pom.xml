@@ -20,6 +20,8 @@
         <module>general-common-spring-cloud</module>
         <module>general-common-satoken</module>
         <module>general-common-snail-job-client</module>
+        <module>general-common-entity</module>
+        <module>general-common-satoken</module>
     </modules>
 
     <properties>

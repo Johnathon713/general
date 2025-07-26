@@ -36,5 +36,13 @@
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-fastjson2</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-jwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-alone-redis</artifactId>
+        </dependency>
     </dependencies>
 </project>

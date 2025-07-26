@@ -2,6 +2,10 @@ server:
   port: 8021
 
 spring:
+  threads:
+    virtual:
+      enabled: true
+
   datasource:
     dynamic:
       grace-destroy: true
@@ -72,17 +76,8 @@ spring:
     redis:
       host: 2408:400a:738:5300:e6c1:1542:b082:d743
       port: 36379
-      password: Mr8!pj_qk8rizLC
-      database: 7
-sa-token:
-  # token 名称（同时也是 cookie 名称）
-  token-name: saToken
-  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
-  is-share: false
-  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
-  token-style: simple-uuid
-  # 是否输出操作日志
-  is-log: true
+      password: Password@13
+      database: 1
 logging:
   level:
     com.zaxxer.hikari.HikariConfig: DEBUG
@@ -99,3 +94,54 @@ snail-job:
   namespace: 074a1e3f65c8452b806685651a36eccd
   host: 127.0.0.1
   port: 17890
+
+sa-token:
+  # token 名称（同时也是 cookie 名称）
+  token-name: Authorization
+  # token 有效期（单位：秒） 默认30天，-1 代表永久有效
+  timeout: -1
+  # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+  active-timeout: -1
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: false
+  # 同一账号最大登录数量，-1代表不限 （只有在 isConcurrent=true，isShare=false 时此配置才有效）
+  max-login-count: -1
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: true
+  #是否打印彩色日志，true=打印彩色日志，false=打印黑白日志，null=框架根据运行终端自行判断是否打印彩色日志
+  is-color-log: true
+  # token 前缀
+  token-prefix: Bearer
+  # 指定 Cookie 模式下自动填充 token 提交前缀
+  cookie-auto-fill-prefix: true
+  # jwt秘钥
+  jwt-secret-key: gtBS54YXe2qhL8thn6FM1
+  # 配置 Sa-Token 单独使用的 Redis 连接
+  alone-redis:
+    database: 1
+    host: 2408:400a:738:5300:e6c1:1542:b082:d743
+    port: 36379
+    username: default
+    password: Password@13
+    timeout: 10s
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
+  configuration:
+    # 开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射。
+    map-underscore-to-camel-case: true
+    # Mybatis一级缓存, 默认为 SESSION。(SESSION：Session 级别缓存, 同一个 Session 相同查询语句不会再次查询数据库, STATEMENT：关闭一级缓存)
+    local-cache-scope: statement
+    # 是否开启 MyBatis 二级缓存, 默认true
+    cache-enabled: false
+
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: assign_id
