@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.john</groupId>
-        <artifactId>general</artifactId>
+        <artifactId>general-visual</artifactId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>snail-job-server</artifactId>
+    <artifactId>general-snail-job-server</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

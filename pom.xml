@@ -15,8 +15,8 @@
         <module>general-commons</module>
         <module>general-auth</module>
         <module>general-base</module>
-        <module>snail-job-server</module>
         <module>general-log</module>
+        <module>general-visual</module>
     </modules>
 
     <properties>

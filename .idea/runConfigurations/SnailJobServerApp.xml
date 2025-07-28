@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="SnailJobServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-    <module name="snail-job-server" />
+    <module name="general-snail-job-server" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="org.john.SnailJobServerApp" />
     <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
     <extension name="coverage">
