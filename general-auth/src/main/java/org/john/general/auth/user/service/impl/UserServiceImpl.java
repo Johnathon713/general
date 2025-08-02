@@ -7,10 +7,11 @@ import cn.hutool.crypto.symmetric.SM4;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.john.general.auth.user.entity.UserBo;
-import org.john.general.auth.user.entity.UserPO;
+import org.john.general.auth.user.entity.UserBO;
+import org.john.general.auth.user.entity.UserDO;
 import org.john.general.auth.user.mapper.UserMapper;
 import org.john.general.auth.user.service.UserService;
+import org.john.general.base.utils.MapstructUtil;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,13 +19,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl extends ServiceImpl<UserMapper, UserPO> implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements UserService {
     private final UserMapper userMapper;
 
     @Override
     @DS("master_1")
-    public Integer save(UserBo userBo) {
-        UserPO user = new UserPO();
+    public Integer save(UserBO userBo) {
+        UserDO convert = MapstructUtil.convert(userBo, UserDO.class);
+        UserDO user = new UserDO();
         // todo 此处使用登录框架之后需要改成实际的用户
         user.setUserName(userBo.getUserName());
         user.setNickName(userBo.getNickName());

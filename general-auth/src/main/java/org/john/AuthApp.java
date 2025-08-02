@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableSnailJob
 @EnableFeignClients
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"org.john.general"})
 @EnableDiscoveryClient
 public class AuthApp {
     public static void main(String[] args) {

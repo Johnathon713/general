@@ -28,10 +28,6 @@
         </dependency>
         <dependency>
             <groupId>org.john</groupId>
-            <artifactId>general-common-entity</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.john</groupId>
             <artifactId>general-common-log</artifactId>
         </dependency>
         <dependency>

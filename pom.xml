@@ -41,6 +41,7 @@
         <snail-job.version>1.6.0</snail-job.version>
         <micrometer-tracing.version>1.5.2</micrometer-tracing.version>
         <mapstruct-plus.version>1.4.8</mapstruct-plus.version>
+        <mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -78,11 +79,6 @@
             <dependency>
                 <groupId>org.john</groupId>
                 <artifactId>general-common-base</artifactId>
-                <version>${general.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.john</groupId>
-                <artifactId>general-common-entity</artifactId>
                 <version>${general.version}</version>
             </dependency>
             <dependency>
@@ -345,11 +341,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version> <!-- Replace with the version you need -->
+                <version>3.11.0</version>
                 <configuration>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
+                    <source>21</source>    <!-- 这里根据自己的需要进行切换 -->
+                    <target>21</target>    <!-- 这里根据自己的需要进行切换 -->
                 </configuration>
             </plugin>
         </plugins>

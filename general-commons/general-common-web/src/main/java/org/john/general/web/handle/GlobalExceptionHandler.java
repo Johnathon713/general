@@ -22,13 +22,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(GeneralRuntimeException.class)
     public ResponseEntity<Result<String>> handleGeneralRuntimeException(GeneralRuntimeException e) {
         log.error("generalRuntimeException", e);
-        return new ResponseEntity<>(Result.error(400, "请求有误: " + e.getMessage()), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(Result.error(400, e), HttpStatus.BAD_REQUEST);
     }
 
 
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<Result<String>> handleThrowable(Throwable throwable) {
         log.error("throwable", throwable);
-        return new ResponseEntity<>(Result.error(500, "系统错误，请稍后再试！\n错误详情: " + throwable.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(Result.error(500, throwable), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

@@ -1,7 +1,7 @@
 package org.john.general.auth.organization.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.john.general.auth.organization.entity.OrganizationPO;
+import org.john.general.auth.organization.entity.OrganizationDO;
 import org.john.general.auth.organization.service.OrganizationService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ public class OrganizationController {
     private final OrganizationService organizationService;
 
     @GetMapping("save")
-    public Boolean saveOrganization(OrganizationPO organization) {
+    public Boolean saveOrganization(OrganizationDO organization) {
         return organizationService.save(organization);
     }
 }

@@ -13,15 +13,13 @@
     <packaging>pom</packaging>
     <modules>
         <module>general-common-base</module>
+        <module>general-common-log</module>
         <module>general-common-mybatis-plus</module>
         <module>general-common-redis</module>
-        <module>general-common-web</module>
-        <module>general-common-log</module>
-        <module>general-common-spring-cloud</module>
         <module>general-common-satoken</module>
         <module>general-common-snail-job-client</module>
-        <module>general-common-entity</module>
-        <module>general-common-satoken</module>
+        <module>general-common-spring-cloud</module>
+        <module>general-common-web</module>
     </modules>
 
     <properties>

@@ -24,7 +24,7 @@ spring:
           password: ${spring.datasource.password}
           url: jdbc:mysql://2408:400a:738:5300:e6c1:1542:b082:d743:33306/general_log?characterEncoding=utf-8&useSSL=true
           hikari:
-            maximum-pool-size: 10
+            maximum-pool-size: 5
             minimum-idle: 2
         slave_1:
           type: ${spring.datasource.type}
@@ -33,7 +33,7 @@ spring:
           password: ${spring.datasource.password}
           url: jdbc:mysql://2408:400a:738:5300:e6c1:1542:b082:d743:33306/general_log?characterEncoding=utf-8&useSSL=true
           hikari:
-            maximum-pool-size: 20
+            maximum-pool-size: 5
             minimum-idle: 2
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver

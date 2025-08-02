@@ -20,10 +20,6 @@
     <dependencies>
         <dependency>
             <groupId>org.john</groupId>
-            <artifactId>general-common-entity</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.john</groupId>
             <artifactId>general-common-mybatis-plus</artifactId>
         </dependency>
         <dependency>
