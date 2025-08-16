@@ -1,17 +1,18 @@
 package org.john.general.auth.user.controller;
 
-import cn.hutool.core.util.StrUtil;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.baomidou.dynamic.datasource.annotation.DS;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.XSlf4j;
 import org.john.general.auth.user.entity.UserBO;
-import org.john.general.auth.user.entity.UserDO;
+import org.john.general.auth.user.entity.UserQuery;
+import org.john.general.auth.user.entity.UserVO;
 import org.john.general.auth.user.service.UserService;
 import org.john.general.base.Result;
+import org.john.general.base.validation.groups.Create;
+import org.john.general.base.validation.groups.Update;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -22,40 +23,37 @@ import java.util.Collection;
 @XSlf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/auth_service/user")
+@RequestMapping("/api/auth-service/user")
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("get/{userId}")
-    public Result<UserDO> get(@PathVariable Long userId) {
-        return Result.success(userService.getById(userId));
+    @GetMapping("select-by-id")
+    public Result<UserVO> selectVoById(@NotNull @RequestParam Long userId) {
+        return Result.success(userService.selectVoById(userId));
     }
 
-    @GetMapping("page")
-    @DS("master")
-    public Result<Page<UserDO>> page(String name, Page<UserDO> page, HttpServletResponse request) {
-        log.info("page: {}", page);
-        QueryWrapper<UserDO> wrapper = new QueryWrapper<>();
-        wrapper.select("user_id, user_name, nick_name, gender, email, phone, reg_channel, avatar, create_time");
-        if (StrUtil.isNotBlank(name)) {
-            wrapper.likeRight("user_id", name).or().likeRight("user_name", name).or().likeRight("nick_name", name).or().likeRight("email", name).or().likeRight("phone", name);
-        }
-        return Result.success(userService.page(page, wrapper));
-    }
-
-    @PostMapping("save")
-    @SentinelResource(value = "saveUser")
-    public Result<Integer> save(@RequestBody UserBO userBo) {
-        return Result.success(userService.save(userBo));
+    @PostMapping("insert")
+    public Result<UserVO> insert(@Validated(Create.class) @RequestBody UserBO userBo) {
+        return Result.success(userService.insert(userBo));
     }
 
     @PutMapping("update")
-    public Result<Boolean> updateById(@RequestBody UserDO user) {
+    public Result<UserVO> updateById(@Validated(Update.class) @RequestBody UserBO user) {
         return Result.success(userService.updateById(user));
     }
 
-    @DeleteMapping("delete")
-    public Result<Boolean> deleteById(Collection<Long> userIds) {
-        return Result.success(userService.removeBatchByIds(userIds));
+    @DeleteMapping("delete-by-id")
+    public Result<Integer> deleteById(@NotNull Long userId) {
+        return Result.success(userService.deleteById(userId));
+    }
+
+    @DeleteMapping("delete-by-ids")
+    public Result<Integer> deleteByIds(@NotEmpty Collection<Long> userIds) {
+        return Result.success(userService.deleteByIds(userIds));
+    }
+
+    @GetMapping("page")
+    public Result<Page<UserVO>> page(@Validated UserQuery userQuery) {
+        return Result.success(userService.selectVoPage(userQuery));
     }
 }

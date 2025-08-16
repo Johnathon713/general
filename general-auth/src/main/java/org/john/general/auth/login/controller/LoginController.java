@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/auth_service/login")
+@RequestMapping("/api/auth-service/login")
 public class LoginController {
     private final LoginService loginService;
 

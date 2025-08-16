@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/auth_service/organization")
+@RequestMapping("api/auth-service/organization")
 public class OrganizationController {
     private final OrganizationService organizationService;
 

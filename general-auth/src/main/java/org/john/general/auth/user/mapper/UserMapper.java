@@ -1,12 +1,13 @@
 package org.john.general.auth.user.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.john.general.auth.user.entity.UserDO;
+import org.john.general.auth.user.entity.UserVO;
+import org.john.general.mybatisPlus.mapper.BaseMapperPlus;
 
 /**
  * @author llxx
  */
 @Mapper
-public interface UserMapper extends BaseMapper<UserDO> {
+public interface UserMapper extends BaseMapperPlus<UserDO, UserVO> {
 }

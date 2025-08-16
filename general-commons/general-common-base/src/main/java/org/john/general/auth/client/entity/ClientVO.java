@@ -34,4 +34,6 @@ public class ClientVO implements Serializable {
     private String gpuSerial;
     // 设备key
     private String deviceKey;
+    // 设备生成的nanoid
+    private String serialNumber;
 }

@@ -24,8 +24,11 @@ public class UserDO extends MybatisPlusBaseEntity implements Serializable {
     private String nickName;
     private String password;
     private String salt;
+    private String passwordKey;
+    private String encryption;
     private String gender;
     private String email;
+    private String phone;
     private String regChannel;
     private String avatar;
 }

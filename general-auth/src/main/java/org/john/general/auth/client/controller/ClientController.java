@@ -15,15 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/auth_service/client")
+@RequestMapping("/api/auth-service/client")
 public class ClientController {
     private final ClientService clientService;
 
     @PostMapping("init")
     public Result<String> init(@RequestBody ClientBO clientBO) {
-        if (true) {
-            throw new GeneralDbException("dfa");
-        }
         return Result.success(clientService.init(clientBO));
     }
 }

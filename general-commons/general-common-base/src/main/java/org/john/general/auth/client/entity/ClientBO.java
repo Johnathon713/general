@@ -36,5 +36,7 @@ public class ClientBO implements Serializable {
     private String gpuSerial;
     // 设备key
     private String deviceKey;
+    // 设备生成的 nanoid
+    private String serialNumber;
 }
 

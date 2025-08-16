@@ -1,4 +1,5 @@
 package org.john.general.base;
+
 import lombok.Data;
 
 import java.io.Serial;
@@ -13,21 +14,16 @@ public class Result<T> implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private T data;
-    private String message;
-    private Long consume;
-
     private String error;
     private String path;
     private String requestId;
     private Long status;
     private Date timestamp;
-
-    private String localizedMessage;
-    private Throwable cause;
-    private Throwable[] suppressed;
-    private StackTraceElement[] stackTrace;
     private Throwable throwable;
+
+    private T data;
+    private String message;
+
 
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<>();
@@ -42,10 +38,6 @@ public class Result<T> implements Serializable {
         Result<T> result = new Result<>();
         result.setStatus(httpStatus);
         result.setError(error.getMessage());
-        result.setLocalizedMessage(error.getLocalizedMessage());
-        result.setCause(error.getCause());
-        result.setStackTrace(error.getStackTrace());
-        result.setSuppressed(error.getSuppressed());
         result.setThrowable(error);
         result.setTimestamp(new Date());
         return result;

@@ -40,7 +40,7 @@ spring:
         - id: general-auth
           uri: lb://general-auth
           predicates:
-            - Path=/api/auth_service/**
+            - Path=/api/auth-service/**
             - Method=GET, POST, PUT, DELETE
         - id: general-log
           uri: lb://general-log
